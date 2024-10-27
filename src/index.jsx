@@ -1,7 +1,6 @@
 import { render } from 'solid-js/web';
 import App from './App';
 import './index.css';
-import { Chart, Title, Tooltip, Legend, Colors } from 'chart.js';
 
 // Add PWA support to the app (this will add a service worker and a manifest file, you don't need to do anything else)
 window.progressierAppRuntimeSettings = {
@@ -10,11 +9,10 @@ window.progressierAppRuntimeSettings = {
   name: 'New App',
   shortName: 'New App',
 };
+
 let script = document.createElement('script');
 script.setAttribute('src', 'https://progressier.app/z8yY3IKmfpDIw3mSncPh/script.js');
 script.setAttribute('defer', 'true');
 document.querySelector('head').appendChild(script);
-
-Chart.register(Title, Tooltip, Legend, Colors);
 
 render(() => <App />, document.getElementById('root'));
